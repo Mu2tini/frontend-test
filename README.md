@@ -38,12 +38,12 @@ The details view MUST at least show:
 - Job description
 - Pay
 
-The details view should have an "Create application"-button if an application is not already registered for truck driver (in this case it should state that the driver has alredy has applied). Clicking on this button MUST perform a REST call to register the application.
+The details view should have a "Create application"-button if an application is not already registered for truck driver, otherwise it should state that the truck driver has alredy has applied. Clicking on the "Create application"-button MUST perform a REST call to register the application.
 
 ## Backend
 
 Take a look in `db.json`.
-The REST api is whatever `npm run start-server` gives you. Basically i CRUD api where you can GET, PUT, POST or DELETE on all collections.
+The REST api is whatever `npm run start-server` gives you. Basically a CRUD api where you can GET, PUT, POST or DELETE on all collections.
 
 The backend has three collections:
 
@@ -63,10 +63,10 @@ The backend has three collections:
 - We favour Typescript over Javascript but you decide
 - Use any npm dependencies (and dev-dependencies) you want. All dependecies you add (except Vue or React) should be motivated (dev dependecies excluded). Use `documentation.md` for this.
 - Please test your application. All tests MUST be executed by running `npm run test`
-- `npm run start` must serve the application on localhost. The port it's served on should be printed out.
-- You are free to use a bootstrap tool to spin upp an application e.g. `Vue CLI` or `Create React App`. However commits containing generated code (not authored by you) MUST have a commit message containing the word `BOOTSTRAP`. These commits / files should not contain your own code, they will not be assessed.
+- `npm run start` MUST serve the application on localhost. The port it's served on should be printed out.
+- You are free to use a bootstrap tool to spin upp the application e.g. `Vue CLI` or `Create React App`. However commits containing generated code (not authored by you) MUST have a commit message containing the word `BOOTSTRAP`. These commits / files should not contain your own code, they will not be assessed.
 - We will look at the git log, keep it tidy!
-- Any description about the project; motivating dependencies you added or design desitions you think is worth mentioning etc. should be placed in a file `documentation.md` in the root of the project.
+- Any description about the project; motivating dependencies you added or design decisions you think is worth mentioning etc. should be placed in a file `documentation.md` in the root of the project.
 - Make sure you merged you solution to the `master` branch. If you do work on other branches, that's fine - they don't need to be deleted - but we will not look at them.
 
 When we test the application we run:
