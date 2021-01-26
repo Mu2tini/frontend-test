@@ -1,6 +1,6 @@
 # Youcruit's frontend test
 
-## Introducation
+## Introduction
 
 This assignment is very free. It's defenitely not a kind of "fill in the blanks"-test, quite the opposite. The only thing provided is a very basic backend, just a `json` file served with `json-server`. Your goal is to implement a frontend application in Vue or React, your choice.
 
