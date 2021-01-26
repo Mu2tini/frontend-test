@@ -8,7 +8,7 @@ This assignment is very free. It's defenitely not a kind of "fill in the blanks"
 
 ### Overview
 
-The application should be very simple job matching app. You choose a truck driver from a list (could be a simple dropdown) populated with data from the backend. For a choosen truck driver, a list will be rendered with all jobs whose requirments are met. When clicking on a job in the list, a details view about the job should be shown, from this view it should be possible to apply to the job.
+The application should be a very simple job matching app. You choose a truck driver from a list (could be a simple dropdown) populated with data from the backend. For a choosen truck driver, a list will be rendered with all jobs whose requirments are met. When clicking on a job in the list, a details view about the job should be shown. From this view it should be possible to apply to the job.
 
 ### Truck driver selector
 
