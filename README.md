@@ -8,12 +8,12 @@ This assignment is very free. It's defenitely not a kind of "fill in the blanks"
 
 ### Overview
 
-The application should be very simple job matching app. You choose a truck driver from a list (could be a simple dropdown) populated with data from the backend. For a choosen truck driver, a list will be rendered with all jobs whose requirments are met. When clicking on a job in the list, a details view about the job is shown where you can create an application.
+The application should be very simple job matching app. You choose a truck driver from a list (could be a simple dropdown) populated with data from the backend. For a choosen truck driver, a list will be rendered with all jobs whose requirments are met. When clicking on a job in the list, a details view about the job should be shown, from this view it should be possible to apply to the job.
 
 ### Truck driver selector
 
 The start page MUST have a way to choose a truck driver. It can be a list, a dropdown, etc.
-After selecting a truck driver, you MUST somehow be able to select another truck driver without needing to reload the page.
+After selecting a truck driver, you MUST somehow be able to select another truck driver without reloading the page.
 
 ### Job list
 
@@ -38,18 +38,18 @@ The details view MUST at least show:
 - Job description
 - Pay
 
-The details view should have an "Create application"-button if an application is not already registered for truck driver. Clicking on this button MUST perform a REST call to register the application.
+The details view should have an "Create application"-button if an application is not already registered for truck driver (in this case it should state that the driver has alredy has applied). Clicking on this button MUST perform a REST call to register the application.
 
 ## Backend
 
 Take a look in `db.json`.
-The REST api is whatever `npm run start-server` gives you. Basically i CRUD api wher you can GET, PUT, POST and DELETE on all collections.
+The REST api is whatever `npm run start-server` gives you. Basically i CRUD api where you can GET, PUT, POST or DELETE on all collections.
 
 The backend has three collections:
 
 1. `truckDrivers`: a list of truck drivers.
 2. `jobs`: a list of, you guessed it, jobs.
-3. `applications` a list of objects linking together truck drivers and jobs together with a time stamp when the application was made.
+3. `applications` a list of objects linking together truck drivers and jobs together with a time stamp when the application was created.
 
 ### Example of a backend call
 
@@ -64,7 +64,7 @@ The backend has three collections:
 - Use any npm dependencies (and dev-dependencies) you want. All dependecies you add (except Vue or React) should be motivated (dev dependecies excluded). Use `documentation.md` for this.
 - Please test your application. All tests MUST be executed by running `npm run test`
 - `npm run start` must serve the application on localhost. The port it's served on should be printed out.
-- You are free to use a bootstrap tool to spin upp an application e.g. `Vue CLI` or `Create React App`. However commits containing generated code (not authored by you) MUST have a commit message containing the word `BOOTSTRAP`. These commits should not contain your own code, it will not be assessed.
+- You are free to use a bootstrap tool to spin upp an application e.g. `Vue CLI` or `Create React App`. However commits containing generated code (not authored by you) MUST have a commit message containing the word `BOOTSTRAP`. These commits / files should not contain your own code, they will not be assessed.
 - We will look at the git log, keep it tidy!
 - Any description about the project; motivating dependencies you added or design desitions you think is worth mentioning etc. should be placed in a file `documentation.md` in the root of the project.
 - Make sure you merged you solution to the `master` branch. If you do work on other branches, that's fine - they don't need to be deleted - but we will not look at them.
