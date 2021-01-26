@@ -1,0 +1,16 @@
+{
+  "name": "@youcruit/frontend-test",
+  "version": "1.0.0",
+  "description": "A frontend test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Error: NOT IMPLEMENTED\" && exit 1",
+    "start-server": "json-server --watch db.json"
+  },
+  "author": "Mojir",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.16.3"
+  }
+}
