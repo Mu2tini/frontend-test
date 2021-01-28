@@ -4,46 +4,41 @@
       "id": "832db305-9657-53c1-9810-f40635e71510",
       "name": "Winifred Alexander",
       "email": "winifred.alexander@example.com",
-      "password": "abc123",
       "drivingExperienceMonths": 24,
       "hasValidDrivingLicense": true,
-      "numberOfMovingViollations": 2
+      "numberOfMovingViolations": 2
     },
     {
       "id": "9ec76685-d61e-5cb0-802d-1c2d22c15acc",
       "name": "Emily Bowers",
       "email": "emily.bowers@example.com",
-      "password": "abc123",
       "drivingExperienceMonths": 0,
       "hasValidDrivingLicense": false,
-      "numberOfMovingViollations": 0
+      "numberOfMovingViolations": 0
     },
     {
       "id": "4f65fdb0-9794-512c-8cdd-9838d7ec0684",
       "name": "Eva Washington",
       "email": "eva.washington@example.com",
-      "password": "abc123",
       "drivingExperienceMonths": 12,
       "hasValidDrivingLicense": true,
-      "numberOfMovingViollations": 0
+      "numberOfMovingViolations": 0
     },
     {
       "id": "f70214f5-4518-56f3-be94-2eadbfe4e1a3",
       "name": "Marvin Fox",
       "email": "marvin.fox@example.com",
-      "password": "abc123",
       "drivingExperienceMonths": 48,
       "hasValidDrivingLicense": false,
-      "numberOfMovingViollations": 3
+      "numberOfMovingViolations": 3
     },
     {
       "id": "cc2805a1-7db0-5a92-a6be-821e1ac4b5a3",
       "name": "Ella Cox",
       "email": "ella.cox@example.com",
-      "password": "abc123",
       "drivingExperienceMonths": 0,
       "hasValidDrivingLicense": true,
-      "numberOfMovingViollations": 1
+      "numberOfMovingViolations": 1
     }
   ],
   "jobs": [
