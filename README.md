@@ -12,7 +12,7 @@ The application should be a very simple job matching app for truck drivers.
 
 1. You choose a truck driver from a list (could be a simple dropdown) populated with data from the backend. For a choosen truck driver, a list will be rendered with all jobs whose requirments are met.
 2. When clicking on a job in the list, a details view about the job well be shown.
-3. From this view it is be possible to apply to the job.
+3. From this view it must be possible to apply to the job.
 
 ### Select truck driver
 
