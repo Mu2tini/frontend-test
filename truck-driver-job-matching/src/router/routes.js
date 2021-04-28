@@ -4,7 +4,8 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/JobSearchPage.vue') },
+      { path: '/jobs/:jobId', name: 'job-details', component: () => import('pages/JobDetailsPage.vue'), props: true }
     ]
   },
 

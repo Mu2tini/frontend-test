@@ -193,6 +193,30 @@
       "truckDriverId": "4f65fdb0-9794-512c-8cdd-9838d7ec0684",
       "jobId": "a072eab1-fd28-580c-a162-b9270331b903",
       "applicationTimestamp": 1610277983000
+    },
+    {
+      "truckDriverId": "9ec76685-d61e-5cb0-802d-1c2d22c15acc",
+      "jobId": "469ca691-c406-591a-909b-f8ba98d1df4f",
+      "applicationTimestamp": "2021-04-28T21:42:11.285Z",
+      "id": 2
+    },
+    {
+      "truckDriverId": "9ec76685-d61e-5cb0-802d-1c2d22c15acc",
+      "jobId": "469ca691-c406-591a-909b-f8ba98d1df4f",
+      "applicationTimestamp": "2021-04-28T21:43:34.164Z",
+      "id": 3
+    },
+    {
+      "truckDriverId": "832db305-9657-53c1-9810-f40635e71510",
+      "jobId": "9db320b2-f75f-58b1-9ead-3b40012af7eb",
+      "applicationTimestamp": "2021-04-28T21:44:32.861Z",
+      "id": 4
+    },
+    {
+      "truckDriverId": "4f65fdb0-9794-512c-8cdd-9838d7ec0684",
+      "jobId": "9cf23555-42b8-51a7-a1f8-f904a83f0455",
+      "applicationTimestamp": "2021-04-28T21:54:20.997Z",
+      "id": 5
     }
   ]
 }

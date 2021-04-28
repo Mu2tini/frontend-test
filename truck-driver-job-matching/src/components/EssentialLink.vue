@@ -1,9 +1,7 @@
 <template>
   <q-item
     clickable
-    tag="a"
-    target="_blank"
-    :href="link"
+    :to="path"
   >
     <q-item-section
       v-if="icon"
@@ -25,7 +23,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'EssentialLink',
+  name: 'essential-link',
   props: {
     title: {
       type: String,
@@ -37,7 +35,7 @@ export default defineComponent({
       default: ''
     },
 
-    link: {
+    path: {
       type: String,
       default: '#'
     },
