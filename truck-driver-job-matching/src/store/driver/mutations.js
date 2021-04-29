@@ -1,3 +1,7 @@
+export function setTruckDriver (state, truckDriver) {
+    state.truckDriver = truckDriver
+}
+
 export function setTruckDrivers (state, truckDrivers) {
     state.truckDrivers = truckDrivers
 }

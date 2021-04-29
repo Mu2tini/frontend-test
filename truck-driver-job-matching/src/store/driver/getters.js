@@ -1,3 +1,7 @@
+export function truckDriver (state) {
+    return state.truckDriver
+}
+
 export function truckDrivers (state) {
     return state.truckDrivers
 }

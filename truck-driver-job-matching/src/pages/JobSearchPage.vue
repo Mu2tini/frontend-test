@@ -110,11 +110,14 @@ export default defineComponent({
     const applications = computed(() => store.state.driver.applications)
     const jobs = computed(() => store.state.driver.jobs)
 
-    let selectedTruckDriver = ref(null)
     let filteredTruckDrivers = ref([...truckDrivers.value])
     let filteredJobs = ref([])
+    let selectedTruckDriver = ref(null)
+
 
     watch(selectedTruckDriver, (val) => {
+
+      store.commit('driver/setTruckDriver', val)
 
       if (val.hasValidDrivingLicense) {
         filteredJobs.value = jobs.value.filter(j => (j.requirements.minDrivingExperienceMonths <= val.drivingExperienceMonths && j.requirements.maxNumberOfMovingViolations >= val.numberOfMovingViolations))
@@ -128,6 +131,8 @@ export default defineComponent({
       })
 
     })
+
+    selectedTruckDriver.value = store.state.driver.truckDriver
 
     let filterFn = (val, update) => {
       update(() => {
