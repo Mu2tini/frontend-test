@@ -3,14 +3,13 @@
     <div
       v-if="job"
       class="q-ma-md column text-grey-9"
-      style="width: 500px;"
+      style="max-width: 500px;"
     >
       <h6 class="q-ma-none">{{job.companyName}}</h6>
       <q-img
-        style="border-radius: 5px; margin-bottom: 15px;"
+        style="max-width:500px; border-radius: 5px; margin-bottom: 15px;"
         src="http://assets.vg247.com/current//2016/02/american_truck_simulator_kenworth_w900.jpg"
         alt="truck"
-        width="500px"
       />
       <h4 class="q-ma-none">{{job.title}}</h4>
 

@@ -1,6 +1,7 @@
 <template>
   <q-page>
     <div class="row">
+
       <div class="col-4 q-pa-md window-height">
         <q-select
           outlined
@@ -26,73 +27,24 @@
           </template>
         </q-select>
 
-        <q-card
-          flat
-          bordered
-          class="q-mt-md"
+        <truck-driver-card
           v-if="selectedTruckDriver"
-        >
-
-          <q-card-section>
-            <div class="text-h6">{{selectedTruckDriver.name}}</div>
-            <div class="text-subtitle2">{{selectedTruckDriver.email}}</div>
-          </q-card-section>
-
-          <q-card-section class="q-pt-none">
-            <div>Months of driving experience <q-badge>{{selectedTruckDriver.drivingExperienceMonths}}</q-badge>
-            </div>
-            <div>Has valid driving license
-              <q-icon
-                name="check_circle"
-                size="sm"
-                color="green"
-                v-if="selectedTruckDriver.hasValidDrivingLicense"
-              />
-              <q-icon
-                v-else
-                size="sm"
-                name="cancel"
-                color="red"
-              />
-            </div>
-            <div>Number of moving violations <q-badge>{{selectedTruckDriver.numberOfMovingViolations}}</q-badge>
-            </div>
-          </q-card-section>
-        </q-card>
-
+          :truckDriver="selectedTruckDriver"
+        ></truck-driver-card>
       </div>
+
       <div
         class="col-8"
         style="border-left: 1px solid #CCC"
       >
         <h5 class="q-pa-none q-ma-md">Jobs that meet driver requirements</h5>
-        <q-list
-          separator
+        <jobs-list
           v-if="selectedTruckDriver"
-        >
-          <q-item
-            :to="{name: 'job-details', params: {jobId: job.id, driverId: selectedTruckDriver.id}}"
-            clickable
-            v-ripple
-            v-for="job in filteredJobs"
-            :key="job.id"
-            class="q-py-lg"
-          >
-            <q-item-section>
-              <q-item-label class="text-subtitle1">{{job.title}}</q-item-label>
-              <q-item-label class="text-overline">{{job.companyName}}</q-item-label>
-              <q-item-label class="text-subtitle1 text-green q-pt-md">&#36; {{job.payPerWeek}}/week</q-item-label>
-            </q-item-section>
-            <q-item-section
-              side
-              class="text-green"
-              v-if="job.applied"
-            >
-              <q-icon name="playlist_add_check" /> applied
-            </q-item-section>
-          </q-item>
-        </q-list>
+          :jobs="filteredJobs"
+          :driverId="selectedTruckDriver.id"
+        ></jobs-list>
       </div>
+
     </div>
   </q-page>
 </template>
@@ -100,9 +52,15 @@
 <script>
 import { defineComponent, ref, computed, watch } from 'vue'
 import { useStore } from 'vuex'
+import TruckDriverCard from '../components/TruckDriverCard.vue'
+import JobsList from '../components/JobsList.vue'
 
 export default defineComponent({
   name: 'job-search-page',
+  components: {
+    TruckDriverCard,
+    JobsList
+  },
   setup () {
     const store = useStore()
 
