@@ -72,7 +72,6 @@ export default defineComponent({
     let filteredJobs = ref([])
     let selectedTruckDriver = ref(null)
 
-
     watch(selectedTruckDriver, (val) => {
 
       store.commit('driver/setTruckDriver', val)
@@ -84,13 +83,19 @@ export default defineComponent({
       }
 
       filteredJobs.value = filteredJobs.value.map(j => {
-        let applied = applications.value.some(a => a.truckDriverId === val.id && a.jobId == j.id)
-        return { ...j, applied: applied }
+        const appliedJob = applications.value.find(a => a.truckDriverId === val.id && a.jobId == j.id)
+        if (appliedJob) {
+          return { ...j, applied: true, applicationTimestamp: appliedJob.applicationTimestamp }
+        } else {
+          return { ...j, applied: false, applicationTimestamp: '' }
+        }
+
       })
 
     })
 
-    selectedTruckDriver.value = store.state.driver.truckDriver
+    selectedTruckDriver.value = store.getters['driver/truckDriver']
+
 
     let filterFn = (val, update) => {
       update(() => {

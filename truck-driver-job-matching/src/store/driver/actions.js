@@ -17,8 +17,13 @@ export function getJobs (context) {
 export function getJob (context, params) {
     return api.get(`jobs/${params.jobId}`)
         .then(res => {
-            let applied = context.getters.applications.some(a => a.truckDriverId === params.driverId && a.jobId == params.jobId)
-            context.commit('setJob', { ...res.data, applied: applied })
+            const appliedJob = context.getters.applications.find(a => a.truckDriverId === params.driverId && a.jobId == params.jobId)
+            if (appliedJob) {
+                context.commit('setJob', { ...res.data, applied: true, applicationTimestamp: appliedJob.applicationTimestamp })
+            } else {
+                context.commit('setJob', { ...res.data, applied: false, applicationTimestamp: '' })
+            }
+
         }).catch(err => console.log(err))
 }
 

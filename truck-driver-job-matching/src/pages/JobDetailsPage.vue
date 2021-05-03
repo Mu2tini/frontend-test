@@ -38,7 +38,7 @@
       <q-btn
         @click="createApplication"
         :disabled="job.applied"
-        :label="job.applied ? 'Already Applied' : 'Create Application'"
+        :label="job.applied ? `Already Applied ${formatTimeStamp(job.applicationTimestamp)}` : 'Create Application'"
         color="green"
       />
     </div>
@@ -50,6 +50,7 @@ import { defineComponent, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 import { api } from '../boot/axios'
+import { formatTimeStamp } from '../utilities/filters'
 
 export default defineComponent({
   name: 'job-details-page',
@@ -64,17 +65,17 @@ export default defineComponent({
       let newApplication = {
         truckDriverId: route.params.driverId,
         jobId: route.params.jobId,
-        applicationTimestamp: new Date()
+        applicationTimestamp: Date.now()
       }
 
       api.post('applications', newApplication)
         .then(res => {
-          store.commit('driver/setAppliedToJob', true)
+          store.commit('driver/setAppliedToJob', { applied: true, timeStamp: Date.now() })
           store.dispatch('driver/getApplications')
         }).catch(err => console.err(err))
     }
 
-    return { job, createApplication }
+    return { job, createApplication, formatTimeStamp }
   }
 })
 </script>

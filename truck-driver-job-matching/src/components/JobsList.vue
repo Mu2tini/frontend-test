@@ -18,7 +18,7 @@
         class="text-green"
         v-if="job.applied"
       >
-        <q-icon name="playlist_add_check" /> applied
+        <q-icon name="playlist_add_check" /> applied {{formatTimeStamp(job.applicationTimestamp)}}
       </q-item-section>
     </q-item>
   </q-list>
@@ -26,6 +26,7 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { formatTimeStamp } from '../utilities/filters'
 
 export default defineComponent({
   name: 'jobs-list',
@@ -38,6 +39,9 @@ export default defineComponent({
       type: String,
       required: true
     }
+  },
+  setup () {
+    return { formatTimeStamp }
   }
 })
 </script>

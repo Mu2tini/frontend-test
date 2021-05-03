@@ -63,7 +63,7 @@ const linksList = [
   }
 ]
 
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onBeforeMount } from 'vue'
 import { useStore } from 'vuex'
 
 export default defineComponent({
@@ -76,9 +76,12 @@ export default defineComponent({
   setup () {
     const leftDrawerOpen = ref(false)
     const store = useStore()
-    store.dispatch('driver/getTruckDrivers')
-    store.dispatch('driver/getJobs')
-    store.dispatch('driver/getApplications')
+
+    onBeforeMount(async () => {
+      await store.dispatch('driver/getJobs')
+      await store.dispatch('driver/getApplications')
+      await store.dispatch('driver/getTruckDrivers')
+    })
 
     return {
       essentialLinks: linksList,

@@ -14,8 +14,9 @@ export function setJob (state, job) {
     state.job = job
 }
 
-export function setAppliedToJob (state, value) {
-    state.job.applied = value
+export function setAppliedToJob (state, payload) {
+    state.job.applied = payload.applied
+    state.job.applicationTimestamp = payload.timeStamp
 }
 
 export function setApplications (state, applications) {
